@@ -209,15 +209,22 @@
     <!-- Newsletter / Footer-top -->
     <section class="border-y border-slate-800 py-8 text-center">
       <h4 class="text-white font-bold mb-4 uppercase tracking-widest">&gt;&gt; SUBSCRIBE_TO_UPDATES</h4>
-      <form class="max-w-md mx-auto flex flex-col sm:flex-row gap-2">
+      <form id="newsletter-form" class="max-w-md mx-auto flex flex-col sm:flex-row gap-2" name="newsletter"
+        method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="newsletter" />
+        <p class="hidden"><label>No llenar: <input name="bot-field" /></label></p>
         <input
           class="bg-slate-950 border border-slate-800 text-white px-4 py-2 flex-1 focus:outline-none focus:border-hacker-green font-display"
-          placeholder="dev@example.com" type="email" />
+          placeholder="dev@example.com" type="email" name="email" required />
         <button class="bg-hacker-green text-black px-6 py-2 font-bold uppercase transition-all hover:bg-white"
           type="submit">
           [ JOIN ]
         </button>
       </form>
+      <p id="newsletter-success"
+        class="hidden max-w-md mx-auto mt-4 font-display text-hacker-green tracking-widest text-sm">
+        &gt; SAVED_SUCCESSFULLY <span class="animate-pulse">_</span>
+      </p>
     </section>
   </main>
   <!-- Terminal Footer -->
@@ -261,6 +268,7 @@
       </div>
     </div>
   </footer>
+  <script src="assets/js/newsletter.js"></script>
   <!-- Mobile Navigation Bar -->
   <div
     class="md:hidden fixed bottom-0 left-0 right-0 bg-slate-950 border-t border-slate-800 flex justify-around p-3 z-50">
