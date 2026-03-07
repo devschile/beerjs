@@ -1,0 +1,17 @@
+{
+  "name": "beerjs_cl",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "browser-sync start --server --files '**/*.html, **/*.css, **/*.js' --no-notify",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "browser-sync": "^3.0.4"
+  }
+}

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html class="light scroll-smooth" lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>BeerJS Santiago</title>
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;700;900&amp;family=IBM+Plex+Mono:wght@400;600&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <script src="assets/js/tailwind.config.js"></script>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+
+<body class="font-display bg-background-light dark:bg-background-dark selection:bg-hacker-green selection:text-black">
+  <!-- Header / Top Bar -->
+  <header
+    class="sticky top-0 z-50 border-b border-slate-800 bg-background-light/70 backdrop-blur-md px-4 py-3 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <span class="material-symbols-outlined text-hacker-green">terminal</span>
+      <h1 class="text-hacker-green font-bold tracking-tighter">BEERJS_SANTIAGO_v2026</h1>
+    </div>
+    <nav class="hidden md:flex gap-6 text-xs uppercase tracking-widest text-slate-400">
+      <a class="hover:text-hacker-cyan transition-colors" href="#about">[ 01. Info ]</a>
+      <a class="hover:text-hacker-cyan transition-colors" href="#events">[ 02. Log ]</a>
+      <a class="hover:text-hacker-cyan transition-colors" href="#mission">[ 03. Mission ]</a>
+      <a class="hover:text-hacker-cyan transition-colors" href="#contact">[ 04. Contact ]</a>
+    </nav>
+    <div class="flex gap-2 items-center text-xs text-slate-500">
+      <span class="w-2 h-2 rounded-full bg-hacker-green animate-pulse"></span>
+      <span>SCL_LIVE</span>
+    </div>
+  </header>
+  <main class="max-w-6xl mx-auto p-4 md:p-8 space-y-12">
+    <!-- 1. Hero Section -->
+    <section
+      class="relative overflow-hidden rounded-lg border-2 border-slate-800 bg-slate-900/50 p-6 md:p-12 shadow-2xl">
+      <div class="scanline"></div>
+      <div class="space-y-4">
+        <div class="font-display text-hacker-green opacity-80 text-sm space-y-1 mb-8">
+          <p>&gt; running community.sh...</p>
+          <p>&gt; loading modules [react, vue, node, bun, mutable]... <span class="text-hacker-cyan">DONE</span></p>
+          <p>&gt; connecting to santiago.node... <span class="text-hacker-cyan">ESTABLISHED</span></p>
+          <p>&gt; fetching next_event_data... 100%</p>
+        </div>
+        <h1 class="text-4xl md:text-7xl font-black text-white glow-text-cyan leading-none uppercase">
+          BEERJS<br /><span class="text-hacker-green">SANTIAGO</span>
+        </h1>
+        <p class="text-lg md:text-2xl text-slate-400 max-w-2xl font-sans">
+          Código y Cervezas: El encuentro para entusiastas de JavaScript en la capital.
+        </p>
+        <div class="flex flex-wrap gap-4 pt-6">
+          <a class="bg-hacker-green text-black px-6 py-3 font-bold uppercase tracking-tighter hover:bg-white transition-all"
+            href="#">
+            [ Próximo Evento ] Soon...
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- 2. ¿Qué es BeerJS? -->
+    <section class="grid grid-cols-1 lg:grid-cols-3 gap-8" id="about">
+      <div class="lg:col-span-1 space-y-4">
+        <h2 class="text-2xl font-bold text-hacker-cyan border-l-4 border-hacker-cyan pl-4 uppercase">// ¿QUÉ ES BEERJS?
+        </h2>
+        <p class="text-slate-400 font-sans leading-relaxed">
+          Somos una comunidad horizontal y abierta. No hay corporaciones detrás, solo desarrolladores compartiendo
+          conocimiento y disfrutando de la cultura craft local.
+        </p>
+      </div>
+      <div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="p-5 border border-slate-800 bg-slate-900/30 hover:border-hacker-green transition-colors group">
+          <span class="material-symbols-outlined text-hacker-green mb-3 block text-3xl">code</span>
+          <h3 class="text-white font-bold mb-2">Charlas Técnicas</h3>
+          <p class="text-xs text-slate-500 font-sans">Deep dives en el ecosistema JS, desde frameworks modernos hasta
+            runtime internals y WebAssembly.</p>
+        </div>
+        <div class="p-5 border border-slate-800 bg-slate-900/30 hover:border-hacker-magenta transition-colors group">
+          <span class="material-symbols-outlined text-hacker-magenta mb-3 block text-3xl">groups</span>
+          <h3 class="text-white font-bold mb-2">Networking Real</h3>
+          <p class="text-xs text-slate-500 font-sans">Conexiones genuinas entre devs. Sin el "pitch" de reclutadores,
+            solo comunidad pura.</p>
+        </div>
+        <div class="p-5 border border-slate-800 bg-slate-900/30 hover:border-hacker-cyan transition-colors group">
+          <span class="material-symbols-outlined text-hacker-cyan mb-3 block text-3xl">sports_bar</span>
+          <h3 class="text-white font-bold mb-2">Cultura Craft</h3>
+          <p class="text-xs text-slate-500 font-sans">Exploramos micro-cervecerías locales mientras debuggeamos código y
+            la vida misma.</p>
+        </div>
+      </div>
+    </section>
+    <!-- 3. Log de Eventos -->
+    <section class="space-y-6" id="events">
+      <div class="flex items-center justify-between border-b border-slate-800 pb-2">
+        <h2 class="text-2xl font-bold text-hacker-green uppercase tracking-tighter">&gt;&gt; EVENT_HISTORY --GIT-LOG
+        </h2>
+        <span class="text-xs text-slate-500">Showing last 6 events</span>
+      </div>
+      <div class="space-y-2 font-display text-sm">
+        <!-- Event Item -->
+        <div
+          class="flex items-start gap-4 p-3 hover:bg-slate-800/50 transition-colors border-l-2 border-transparent hover:border-hacker-green">
+          <span class="text-hacker-cyan shrink-0">commit a4f92bc</span>
+          <div class="flex-1">
+            <h4 class="text-white font-bold uppercase">Edición #52: Pruebas Automatizadas Masivas utilizando GitHub
+              Actions y Classroom</h4>
+            <p class="text-slate-500 font-sans text-xs mt-1">Date: 2022-08-04 | Venue: sClass</p>
+          </div>
+        </div>
+        <div
+          class="flex items-start gap-4 p-3 hover:bg-slate-800/50 transition-colors border-l-2 border-transparent hover:border-hacker-green">
+          <span class="text-hacker-cyan shrink-0">commit 92e10ff</span>
+          <div class="flex-1">
+            <h4 class="text-white font-bold uppercase">Edición #51: Temas Libres</h4>
+            <p class="text-slate-500 font-sans text-xs mt-1">Date: 2021-12-10 | Venue: Bar Ay Mi Madre</p>
+          </div>
+        </div>
+        <div
+          class="flex items-start gap-4 p-3 hover:bg-slate-800/50 transition-colors border-l-2 border-transparent hover:border-hacker-green">
+          <span class="text-hacker-cyan shrink-0">commit 1bc45d2</span>
+          <div class="flex-1">
+            <h4 class="text-white font-bold uppercase">Edición #50: Programación Funcional Práctica con Ramda</h4>
+            <p class="text-slate-500 font-sans text-xs mt-1">Date: 2020-03-06 | Venue: eClass</p>
+          </div>
+        </div>
+        <div
+          class="flex items-start gap-4 p-3 hover:bg-slate-800/50 transition-colors border-l-2 border-transparent hover:border-hacker-green">
+          <span class="text-hacker-cyan shrink-0">commit e8a23c4</span>
+          <div class="flex-1">
+            <h4 class="text-white font-bold uppercase">Edición #49: Apollo GraphQL Basics</h4>
+            <p class="text-slate-500 font-sans text-xs mt-1">Date: 2020-02-05 | Venue: Dealsyte</p>
+          </div>
+        </div>
+        <div
+          class="flex items-start gap-4 p-3 hover:bg-slate-800/50 transition-colors border-l-2 border-transparent hover:border-hacker-green">
+          <span class="text-hacker-cyan shrink-0">commit f4419aa</span>
+          <div class="flex-1">
+            <h4 class="text-white font-bold uppercase">Edición #48: Deploy Previews</h4>
+            <p class="text-slate-500 font-sans text-xs mt-1">Date: 2019-10-02 | Venue: eClass</p>
+          </div>
+        </div>
+        <div
+          class="flex items-start gap-4 p-3 hover:bg-slate-800/50 transition-colors border-l-2 border-transparent hover:border-hacker-green">
+          <span class="text-hacker-cyan shrink-0">commit c1189d0</span>
+          <div class="flex-1">
+            <h4 class="text-white font-bold uppercase">Edición #47: Node CLI para adaptar un design system</h4>
+            <p class="text-slate-500 font-sans text-xs mt-1">Date: 2019-08-07 | Venue: Modyo</p>
+          </div>
+        </div>
+      </div>
+      <div class="text-center pt-4">
+        <a href="https://github.com/beerjs/santiago/issues"
+          class="text-xs text-slate-500 hover:text-hacker-green uppercase tracking-widest">[ See More History ]</a>
+      </div>
+    </section>
+    <!-- 4. Misión: Auspicios y Charlas -->
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-8" id="mission">
+      <!-- Sponsor Column -->
+      <div class="border border-slate-800 bg-slate-900/20 p-6 flex flex-col justify-between">
+        <div>
+          <h3 class="text-xl font-bold text-hacker-magenta flex items-center gap-2 mb-4 uppercase">
+            <span class="material-symbols-outlined">favorite</span> Convertirse en Sponsor
+          </h3>
+          <p class="text-sm text-slate-400 mb-6 font-sans">Apoya la comunidad y posiciona tu marca frente a los mejores
+            desarrolladores de Santiago.</p>
+          <ul class="space-y-3 text-xs uppercase tracking-tight text-slate-300">
+            <li class="flex items-center gap-2"><span class="text-hacker-magenta">+</span> Espacio para un evento</li>
+            <li class="flex items-center gap-2"><span class="text-hacker-magenta">+</span> Mención en redes sociales
+            </li>
+            <li class="flex items-center gap-2"><span class="text-hacker-magenta">+</span> Slot para charla</li>
+            <li class="flex items-center gap-2"><span class="text-hacker-magenta">+</span> Reclutamiento local</li>
+          </ul>
+        </div>
+        <a href="mailto:salud@beerjs.cl"
+          class="mt-8 w-full py-3 border border-hacker-magenta text-hacker-magenta font-bold uppercase hover:bg-hacker-magenta hover:text-black transition-all text-center">
+          [ Contactar Auspicio ]
+        </a>
+      </div>
+      <!-- Speaker Column -->
+      <div class="border border-slate-800 bg-slate-900/20 p-6 flex flex-col justify-between">
+        <div>
+          <h3 class="text-xl font-bold text-hacker-cyan flex items-center gap-2 mb-4 uppercase">
+            <span class="material-symbols-outlined">campaign</span> Call for Speakers
+          </h3>
+          <p class="text-sm text-slate-400 mb-6 font-sans">¿Tienes algo interesante que compartir? No importa si es tu
+            primera charla o si eres un experto. Algunas ideas:</p>
+          <div class="space-y-4 font-display text-xs text-slate-500">
+            <p class="p-2 bg-slate-950 border-l-2 border-hacker-cyan">
+              <span class="text-white">TALK_TYPE_01:</span> Proyectos Personales
+            </p>
+            <p class="p-2 bg-slate-950 border-l-2 border-hacker-cyan">
+              <span class="text-white">TALK_TYPE_02:</span> Casos de éxito
+            </p>
+            <p class="p-2 bg-slate-950 border-l-2 border-hacker-cyan">
+              <span class="text-white">TALK_TYPE_03:</span> Casos de fracaso
+            </p>
+          </div>
+        </div>
+        <a href="https://github.com/beerjs/santiago/issues/101"
+          class="mt-8 w-full py-3 border border-hacker-cyan text-hacker-cyan font-bold uppercase hover:bg-hacker-cyan hover:text-black transition-all text-center">
+          [ Proponer Charla ]
+        </a>
+      </div>
+    </section>
+    <!-- Newsletter / Footer-top -->
+    <section class="border-y border-slate-800 py-8 text-center">
+      <h4 class="text-white font-bold mb-4 uppercase tracking-widest">&gt;&gt; SUBSCRIBE_TO_UPDATES</h4>
+      <form class="max-w-md mx-auto flex flex-col sm:flex-row gap-2">
+        <input
+          class="bg-slate-950 border border-slate-800 text-white px-4 py-2 flex-1 focus:outline-none focus:border-hacker-green font-display"
+          placeholder="dev@example.com" type="email" />
+        <button class="bg-hacker-green text-black px-6 py-2 font-bold uppercase transition-all hover:bg-white"
+          type="submit">
+          [ JOIN ]
+        </button>
+      </form>
+    </section>
+  </main>
+  <!-- Terminal Footer -->
+  <footer class="bg-slate-950 border-t border-slate-800 px-4 py-8 mt-12" id="contact">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="flex flex-col items-center md:items-start gap-2">
+        <div class="flex gap-4">
+          <a class="text-slate-500 hover:text-white transition-colors" href="https://x.com/BeerJSSantiago">
+            <span class="sr-only">X (Twitter)</span>
+            <svg class="h-5 w-5 fill-current" viewbox="0 0 24 24">
+              <path
+                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z">
+              </path>
+            </svg>
+          </a>
+          <a class="text-slate-500 hover:text-white transition-colors" href="https://github.com/beerjs/santiago">
+            <span class="sr-only">GitHub</span>
+            <svg class="h-5 w-5 fill-current" viewbox="0 0 24 24">
+              <path
+                d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12">
+              </path>
+            </svg>
+          </a>
+          <a class="text-slate-500 hover:text-white transition-colors" href="https://devschile.slack.com/">
+            <span class="sr-only">Slack</span>
+            <span class="material-symbols-outlined text-xl">forum</span>
+          </a>
+        </div>
+        <p class="text-[10px] text-slate-600 uppercase tracking-widest mt-2">© BeerJS Santiago. Desde 2015 evangelizando
+          buen código y cerveza.</p>
+      </div>
+      <div class="text-center">
+        <span class="text-hacker-green font-bold glow-text-green text-sm">BUILT_WITH_JS_AND_HOPS</span>
+      </div>
+      <div class="flex items-center gap-2 text-slate-500 text-[10px] uppercase">
+        <span>System Status:</span>
+        <span class="text-hacker-green">OPTIMAL</span>
+        <span class="mx-2">|</span>
+        <span>Latency:</span>
+        <span class="text-hacker-cyan">24ms</span>
+      </div>
+    </div>
+  </footer>
+  <!-- Mobile Navigation Bar -->
+  <div
+    class="md:hidden fixed bottom-0 left-0 right-0 bg-slate-950 border-t border-slate-800 flex justify-around p-3 z-50">
+    <a class="text-slate-400 hover:text-hacker-green flex flex-col items-center gap-1" href="#about">
+      <span class="material-symbols-outlined">info</span>
+      <span class="text-[8px] uppercase">Info</span>
+    </a>
+    <a class="text-slate-400 hover:text-hacker-green flex flex-col items-center gap-1" href="#events">
+      <span class="material-symbols-outlined">history</span>
+      <span class="text-[8px] uppercase">Log</span>
+    </a>
+    <a class="text-slate-400 hover:text-hacker-green flex flex-col items-center gap-1" href="#mission">
+      <span class="material-symbols-outlined">target</span>
+      <span class="text-[8px] uppercase">Mission</span>
+    </a>
+    <a class="text-slate-400 hover:text-hacker-green flex flex-col items-center gap-1" href="#">
+      <span class="material-symbols-outlined">event</span>
+      <span class="text-[8px] uppercase">Next</span>
+    </a>
+  </div>
+</body>
+
+</html>
