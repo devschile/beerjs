@@ -1,6 +1,9 @@
 # BeerJS Santiago 🍻
 
-Landing page estática para el evento `BeerJS Santiago`.
+Landing page estática de la comunidad `BeerJS Santiago`.
+
+- Sitio web: [beerjs.cl](https://www.beerjs.cl/)
+- Repositorio: [github.com/devschile/beerjs](https://github.com/devschile/beerjs)
 
 ## Stack
 
@@ -36,3 +39,7 @@ Abre el navegador en `http://localhost:3000` y recarga automáticamente al guard
 ## Deploy
 
 El proyecto se despliega en Netlify directamente desde el directorio `public/`. No requiere proceso de build.
+
+## Licencia
+
+MIT
