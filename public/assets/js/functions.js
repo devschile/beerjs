@@ -65,6 +65,29 @@
 }());
 
 // --- Newsletter form (StaticForms) ---
+(function () {
+  var form = document.getElementById('newsletter-form');
+  var successMsg = document.getElementById('newsletter-success');
+  if (!form) return;
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var data = new FormData(form);
+
+    fetch('https://api.staticforms.dev/submit', {
+      method: 'POST',
+      body: data,
+    })
+      .then(function (res) { return res.json(); })
+      .then(function (json) {
+        if (json.success) {
+          form.classList.add('hidden');
+          successMsg.classList.remove('hidden');
+        }
+      })
+      .catch(function (err) { console.error(err); });
+  });
+})();
 
 // fancy console.log
 console.log('%c  _______  _______  _______  ______        ___  _______        _______  ___      \r\n |  _    ||       ||       ||    _ |      |   ||       |      |       ||   |     \r\n | |_|   ||    ___||    ___||   | ||      |   ||  _____|      |       ||   |     \r\n |       ||   |___ |   |___ |   |_||_     |   || |_____       |       ||   |     \r\n |  _   | |    ___||    ___||    __  | ___|   ||_____  | ___  |      _||   |___  \r\n | |_|   ||   |___ |   |___ |   |  | ||       | _____| ||   | |     |_ |       | \r\n |_______||_______||_______||___|  |_||_______||_______||___| |_______||_______| \r\n                                                                                 ', 'background: #222; color: #ffCC00')
