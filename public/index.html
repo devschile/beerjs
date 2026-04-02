@@ -230,23 +230,22 @@
       </div>
     </section>
     <!-- Newsletter / Footer-top -->
-    <section class="border-y border-slate-800 py-8 text-center">
-      <h4 class="text-white font-bold mb-4 uppercase tracking-widest">&gt;&gt; SUBSCRIBE_TO_UPDATES</h4>
-      <form id="newsletter-form" class="max-w-md mx-auto flex flex-col sm:flex-row gap-2" name="newsletter"
-        method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
-        <input type="hidden" name="form-name" value="newsletter" />
-        <p class="hidden"><label>No llenar: <input name="bot-field" /></label></p>
+    <section class="border-y border-slate-800 py-8 text-center" id="newsletter-section">
+      <h4 class="text-white font-bold mb-4 uppercase tracking-widest">&gt;&gt; CONVERSEMOS</h4>
+      <form id="newsletter-form" action="https://api.staticforms.dev/submit" method="POST" name="BeerJS"
+        class="max-w-md mx-auto flex flex-col sm:flex-row gap-2">
+        <input type="hidden" name="apiKey" value="sf_258fe0c82a7d538818506127" />
         <input
           class="bg-slate-950 border border-slate-800 text-white px-4 py-2 flex-1 focus:outline-none focus:border-hacker-green font-display"
           placeholder="dev@example.com" type="email" name="email" required />
         <button class="bg-hacker-green text-black px-6 py-2 font-bold uppercase transition-all hover:bg-white"
           type="submit">
-          [ JOIN ]
+          [ ENVIAR ]
         </button>
       </form>
       <p id="newsletter-success"
         class="hidden max-w-md mx-auto mt-4 font-display text-hacker-green tracking-widest text-sm">
-        &gt; SAVED_SUCCESSFULLY <span class="animate-pulse">_</span>
+        &gt; EMAIL_ENVIADO <span class="animate-pulse">_</span>
       </p>
     </section>
   </main>

@@ -64,32 +64,32 @@
   typeNext();
 }());
 
-// --- Newsletter form ---
+// --- Newsletter form (StaticForms) ---
 const form = document.getElementById('newsletter-form');
 const successMsg = document.getElementById('newsletter-success');
 
-form.addEventListener('submit', async (e) => {
-  e.preventDefault();
+if (form) {
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
 
-  const data = new FormData(form);
+    const data = new FormData(form);
 
-  try {
-    const res = await fetch('/', {
+    fetch('https://api.staticforms.dev/submit', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(data).toString(),
-    });
-
-    if (res.ok) {
-      form.classList.add('hidden');
-      successMsg.classList.remove('hidden');
-    } else {
-      console.error('Form submission failed', res.status);
-    }
-  } catch (err) {
-    console.error('Network error', err);
-  }
-});
+      body: data,
+    })
+      .then((res) => res.json())
+      .then((json) => {
+        if (json.success) {
+          form.classList.add('hidden');
+          successMsg.classList.remove('hidden');
+        } else {
+          console.error('Form submission failed', json);
+        }
+      })
+      .catch((err) => console.error('Network error', err));
+  });
+}
 
 // fancy console.log
 console.log('%c  _______  _______  _______  ______        ___  _______        _______  ___      \r\n |  _    ||       ||       ||    _ |      |   ||       |      |       ||   |     \r\n | |_|   ||    ___||    ___||   | ||      |   ||  _____|      |       ||   |     \r\n |       ||   |___ |   |___ |   |_||_     |   || |_____       |       ||   |     \r\n |  _   | |    ___||    ___||    __  | ___|   ||_____  | ___  |      _||   |___  \r\n | |_|   ||   |___ |   |___ |   |  | ||       | _____| ||   | |     |_ |       | \r\n |_______||_______||_______||___|  |_||_______||_______||___| |_______||_______| \r\n                                                                                 ', 'background: #222; color: #ffCC00')
