@@ -65,31 +65,6 @@
 }());
 
 // --- Newsletter form (StaticForms) ---
-const form = document.getElementById('newsletter-form');
-const successMsg = document.getElementById('newsletter-success');
-
-if (form) {
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    const data = new FormData(form);
-
-    fetch('https://api.staticforms.dev/submit', {
-      method: 'POST',
-      body: data,
-    })
-      .then((res) => res.json())
-      .then((json) => {
-        if (json.success) {
-          form.classList.add('hidden');
-          successMsg.classList.remove('hidden');
-        } else {
-          console.error('Form submission failed', json);
-        }
-      })
-      .catch((err) => console.error('Network error', err));
-  });
-}
 
 // fancy console.log
 console.log('%c  _______  _______  _______  ______        ___  _______        _______  ___      \r\n |  _    ||       ||       ||    _ |      |   ||       |      |       ||   |     \r\n | |_|   ||    ___||    ___||   | ||      |   ||  _____|      |       ||   |     \r\n |       ||   |___ |   |___ |   |_||_     |   || |_____       |       ||   |     \r\n |  _   | |    ___||    ___||    __  | ___|   ||_____  | ___  |      _||   |___  \r\n | |_|   ||   |___ |   |___ |   |  | ||       | _____| ||   | |     |_ |       | \r\n |_______||_______||_______||___|  |_||_______||_______||___| |_______||_______| \r\n                                                                                 ', 'background: #222; color: #ffCC00')
